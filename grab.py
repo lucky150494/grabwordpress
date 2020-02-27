@@ -15,18 +15,23 @@ def save_ke_file(textnya):
 def grab_home():
 
 	hasil = requests.get('https://www.bibitbuahku.com/')
+	
+	# page = requests.get('https://www.bibitbuahku.com/')
+	soup = BeautifulSoup(hasil.text, 'html.parser')
+	if page.status_code==200:
+    		div = soup.find(id='cb-section-a')
 
 	# print(hasil.status_code) 
 	# print(hasil.text) 
-	parser = etree.HTMLParser()
-	soup = etree.parse(StringIO(hasil.text), parser)
+	# parser = etree.HTMLParser()
+	# soup = etree.parse(StringIO(hasil.text), parser)
 
 
-	slider = soup.xpath('/html/body/div[1]/div[4]/div[1]/div/div[2]/text()')
+	# slider = soup.xpath('/html/body/div[1]/div[4]/div[1]/div/div[2]/text()')
 	
-	sing_string = "".join(slider)
+	# sing_string = "".join(slider)
 
-	save_ke_file(sing_string)
+	# save_ke_file(sing_string)
 
 	print('ok')
 
