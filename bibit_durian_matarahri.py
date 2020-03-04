@@ -3,9 +3,6 @@ from io import StringIO
 from lxml import etree
 from bs4 import BeautifulSoup
 import csv
-import lxml.html as lh
-import pandas as pd
-
 
 
 def save_ke_file(textnya):
@@ -48,13 +45,10 @@ def grab_home():
 	# sing_string = "".join(title)
 	# save_ke_file(sing_string)
 
-	#print(titledes1)
+	print(slider)
 
 	# 200 -> berhasil
 
-doc = lh.fromstring(hasil.content)
-#Parse data that are stored between <tr>..</tr> of HTML
-tr_elements = doc.xpath('//tr')
 
 if __name__ == '__main__':
 	grab_home()
